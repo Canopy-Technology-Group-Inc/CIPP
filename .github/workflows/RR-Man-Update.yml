@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-22.04
     name: Build and Deploy Job
     steps:
+    - name: Configure Git
+        run: |
+          git config --global --unset-all http.https://github.com/.extraheader || true
       - uses: actions/checkout@v2
         with:
           submodules: true
